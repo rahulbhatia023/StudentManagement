@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="2.0">
+	<wb-module deploy-name="StudentManagement">
+		<property name="context-root" value="StudentManagement"/>
+		<wb-resource deploy-path="/WEB-INF/classes" source-path="src/main/resources"/>
+		<wb-resource deploy-path="/WEB-INF/classes" source-path="src/main/java"/>
+		<wb-resource deploy-path="/" source-path="src/main/webapp"/>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/672574/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/4.3.1.RELEASE/8f9dee8b2ea55785b4ec9d3fbac16c0df424493d/spring-core-4.3.1.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/672574/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/4.3.1.RELEASE/3149d61391d72c9594d3ebc06570f561efd80527/spring-webmvc-4.3.1.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/672574/.gradle/caches/modules-2/files-2.1/javax.servlet/servlet-api/2.5/5959582d97d8b61f4d154ca9e495aafd16726e34/servlet-api-2.5.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/672574/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/4bfc12adfe4842bf07b657f0369c4cb522955686/commons-logging-1.2.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/672574/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/4.3.1.RELEASE/9d7222291b640bb238781e79d6b6a62840ecd820/spring-aop-4.3.1.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/672574/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/4.3.1.RELEASE/4bdfad34241497243bd5d6e434f3a48c822377e0/spring-beans-4.3.1.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/672574/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/4.3.1.RELEASE/254b02ed3f07fb847801fadc69eb1d99018d6004/spring-context-4.3.1.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/672574/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/4.3.1.RELEASE/cda94fb45005824bbb9582efe0632265acbbc7fc/spring-expression-4.3.1.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/672574/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/4.3.1.RELEASE/cd93b7f163d17062765c356203cd291af470018b/spring-web-4.3.1.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+	</wb-module>
+</project-modules>

@@ -1,0 +1,19 @@
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'eclipse'
+apply plugin: 'eclipse-wtp'
+
+war {
+    baseName = 'StudentManagement'
+    version = '1.0.0-BUILD-SNAPSHOT'
+}
+repositories {
+    mavenCentral()
+}
+
+dependencies {   
+    compile group: 'org.springframework', name: 'spring-core', version: '4.3.1.RELEASE'
+    compile group: 'org.springframework', name: 'spring-webmvc', version: '4.3.1.RELEASE'
+    compile group: 'javax.servlet', name: 'servlet-api', version: '2.5'
+    compile group: 'log4j', name: 'log4j', version: '1.2.17'
+}
