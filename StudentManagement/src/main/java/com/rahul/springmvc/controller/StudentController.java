@@ -1,5 +1,7 @@
 package com.rahul.springmvc.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,7 +16,7 @@ import com.rahul.springmvc.dao.StudentDao;
 import com.rahul.springmvc.model.Student;
 
 @Controller
-@SessionAttributes("isUserLoggedIn")
+@SessionAttributes({"isUserLoggedIn", "userName"})
 public class StudentController
 {
 	@Autowired
@@ -43,14 +45,14 @@ public class StudentController
 	}
 	
 	@RequestMapping(value = "/addStudentInfo", method = RequestMethod.POST)
-	public ModelAndView addStudentInformation(@ModelAttribute("student") Student student)
+	public ModelAndView addStudentInformation(@ModelAttribute("student") Student student, @ModelAttribute("userName") String adminId)
 	{
-		studentDao.addStudent(student);
+		studentDao.addStudent(student, adminId);
 		ModelAndView model = new ModelAndView("AdmissionSuccess");
 		return model;
 	}
 	
-	@RequestMapping(value = "/getStudent", method = RequestMethod.GET)
+	@RequestMapping(value = "/getStudentByEmailId", method = RequestMethod.GET)
 	public ModelAndView getStudent()
 	{
 		ModelAndView model = new ModelAndView("GetStudentInfo");
@@ -58,18 +60,18 @@ public class StudentController
 	}
 	
 	@RequestMapping(value = "/getStudentInfo", method = RequestMethod.POST)
-	public ModelAndView getStudentInfo(@RequestParam("studentId") int id)
+	public ModelAndView getStudentInfo(@RequestParam("studentId") String emailId)
 	{
-		Student student = studentDao.getStudent(id);
+		Student student = studentDao.getStudent(emailId);
 		ModelAndView model = new ModelAndView("StudentInformation");
 		model.addObject("student", student);
 		return model;
 	}
 	
 	@RequestMapping(value = "/updateStudent", method = RequestMethod.POST)
-	public ModelAndView updateStudent(@RequestParam("studentId") int id)
+	public ModelAndView updateStudent(@RequestParam("studentId") String emailId)
 	{
-		Student student = studentDao.getStudent(id);
+		Student student = studentDao.getStudent(emailId);
 		ModelAndView model = new ModelAndView("UpdateStudent");
 		model.addObject("student", student);
 		return model;
@@ -84,10 +86,20 @@ public class StudentController
 	}
 	
 	@RequestMapping(value = "/deleteStudent", method = RequestMethod.POST)
-	public ModelAndView deleteStudent(@RequestParam("studentId") int id)
+	public ModelAndView deleteStudent(@RequestParam("studentId") String emailId)
 	{
-		studentDao.deleteStudent(id);
+		studentDao.deleteStudent(emailId);
 		ModelAndView model = new ModelAndView("DeleteStudent");
+		return model;
+	}
+	
+	@RequestMapping(value = "/getStudentList", method = RequestMethod.GET)
+	public ModelAndView getStudentList(@ModelAttribute("userName") String adminId)
+	{
+		List<?> students = studentDao.getStudentList(adminId);
+		ModelAndView model = new ModelAndView("StudentList");
+		model.addObject("students", students);
+		
 		return model;
 	}
 }

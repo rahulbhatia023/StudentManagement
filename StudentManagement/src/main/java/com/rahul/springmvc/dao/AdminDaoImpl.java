@@ -1,5 +1,7 @@
 package com.rahul.springmvc.dao;
 
+import java.util.List;
+
 import org.hibernate.SessionFactory;
 import org.springframework.orm.hibernate4.HibernateTemplate;
 import org.springframework.transaction.annotation.Propagation;
@@ -22,6 +24,17 @@ public class AdminDaoImpl implements AdminDao
 	public void createAdmin(Admin admin, LoginCredentials loginCredentials) {
 		hibernateTemplate.persist(admin);
 		hibernateTemplate.persist(loginCredentials);
+	}
+
+	public String checkEmailIdExists(String userName) {
+		String query = "FROM Admin WHERE emailId = ?";
+		Object[] queryParam = {userName};
+		List<?> list = hibernateTemplate.find(query, queryParam);
+		
+		if(!list.isEmpty())
+			return "Email ID already exists";
+		
+		return "";
 	}
 
 }

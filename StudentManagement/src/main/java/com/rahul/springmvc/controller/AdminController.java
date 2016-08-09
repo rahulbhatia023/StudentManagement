@@ -3,6 +3,8 @@ package com.rahul.springmvc.controller;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.rahul.springmvc.dao.AdminDao;
@@ -50,5 +53,13 @@ public class AdminController
 		
 		adminDao.createAdmin(admin, loginCredentials);
 		return new ModelAndView("AdminCreationSuccess");
+	}
+	
+	@RequestMapping(value = "/checkEmailIdExists", method = RequestMethod.POST)
+	@ResponseBody
+	public String checkEmailIdExists(HttpServletRequest request)
+	{	
+		String userName = request.getParameter("userName");
+		return adminDao.checkEmailIdExists(userName);
 	}
 }

@@ -11,7 +11,7 @@
 	<form action="./getStudentInfo" method="POST">
 		<table>
 			<tr>
-				<td>Student Id:</td>
+				<td>Please enter the email ID of Student: </td>
 				<td><input type="text" name="studentId"></td>
 			</tr>
 			<tr>

@@ -32,10 +32,6 @@
 	<form action="./updateStudentInfo" method="POST">
 		<table>
 			<tr>
-				<td>Student Id:</td>
-				<td><input type="hidden" name="id" value="${student.id}" />${student.id}</td>
-			</tr>
-			<tr>
 				<td>First Name:</td>
 				<td><input type="text" name="firstName" value="${student.firstName}" /></td>
 			</tr>
@@ -45,7 +41,7 @@
 			</tr>
 			<tr>
 				<td>Email ID:</td>
-				<td><input type="text" name="emailId" value="${student.emailId}"/></td>
+				<td><input type="hidden" name="id" value="${student.emailId}" /><input type="text" name="emailId" value="${student.emailId}"/></td>
 			</tr>
 			<tr>
 				<td>Mobile Number:</td>

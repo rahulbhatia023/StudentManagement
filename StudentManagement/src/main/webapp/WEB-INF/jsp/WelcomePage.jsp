@@ -12,6 +12,7 @@
 	Hello ${userName}
 	<br>
 	<br><a href="./addStudent">Add Student</a>
-	<br><a href="./getStudent">Get Student</a>
+	<br><a href="./getStudentByEmailId">Get Student By Email ID</a>
+	<br><a href="./getStudentList">Get Student List</a>
 </body>
 </html>

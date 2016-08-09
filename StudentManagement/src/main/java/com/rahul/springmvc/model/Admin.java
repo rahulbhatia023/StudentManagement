@@ -9,6 +9,7 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
@@ -26,6 +27,7 @@ public class Admin
 	@Id
 	@Column(name="email_id", nullable=false)
 	@NotEmpty
+	@Email
 	private String emailId;
 	
 	@Transient

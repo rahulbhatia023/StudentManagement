@@ -25,12 +25,8 @@ $(document).ready(function(){
 <body>
 	<h3>Student Details:</h3>
 	<form id="studentForm">
-		<input type="hidden" name="studentId" value="${student.id}" />
+		<input type="hidden" name="studentId" value="${student.emailId}" />
 		<table>
-				<tr>
-					<td>Student Id:</td>
-					<td>${student.id}</td>
-				</tr>
 				<tr>
 					<td>First Name:</td>
 					<td>${student.firstName}</td>
